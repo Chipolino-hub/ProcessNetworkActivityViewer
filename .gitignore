@@ -1,0 +1,19 @@
+# Compiled files and build directories
+/bin/
+/target/
+/build/
+/out/
+*.class
+*.jar
+
+# Editor and OS files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Local settings and sensitive files
+.env
+.env.*
+*.key
+*.pem

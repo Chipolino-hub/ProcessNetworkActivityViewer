@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="application.Controller"
+      prefWidth="1200" prefHeight="700">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <!-- Верхняя панель инструментов -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="Обновить" onAction="#onRefresh"/>
+        <TextField fx:id="searchField" promptText="Поиск (имя, IP, порт)" HBox.hgrow="ALWAYS"/>
+        <Label text="Протокол:"/>
+        <ComboBox fx:id="protocolFilter" prefWidth="100"/>
+        <Label text="Порт:"/>
+        <ComboBox fx:id="portFilter" prefWidth="150"/>
+        <Button text="Снимок" onAction="#onTakeSnapshot"/>
+        <Button text="Сравнить" onAction="#onCompareSnapshot"/>
+        <Button text="О программе" onAction="#onAbout"/>
+    </HBox>
+
+    <!-- Таблица соединений -->
+    <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colProcess" text="Процесс" prefWidth="200"/>
+            <TableColumn fx:id="colPid" text="PID" prefWidth="60"/>
+            <TableColumn fx:id="colLocal" text="Локальный адрес" prefWidth="150"/>
+            <TableColumn fx:id="colRemote" text="Удалённый адрес" prefWidth="200"/>
+            <TableColumn fx:id="colProtocol" text="Протокол" prefWidth="70"/>
+            <TableColumn fx:id="colSent" text="Отправлено (байт)" prefWidth="120"/>
+            <TableColumn fx:id="colReceived" text="Получено (байт)" prefWidth="120"/>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+
+    <!-- Нижняя панель статистики -->
+    <HBox spacing="20" alignment="CENTER_LEFT">
+        <padding><Insets top="5"/></padding>
+        <Label fx:id="totalConnectionsLabel" text="Соединений: 0"/>
+        <Label fx:id="totalSentLabel" text="Отправлено: 0 байт"/>
+        <Label fx:id="totalReceivedLabel" text="Получено: 0 байт"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="statusLabel" text="Готово"/>
+    </HBox>
+</VBox>

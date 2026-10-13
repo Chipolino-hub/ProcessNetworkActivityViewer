@@ -1,0 +1,43 @@
+.root {
+    -fx-base: #3f474f;
+    -fx-background: #2b2b2b;
+    -fx-control-inner-background: #404040;
+    -fx-text-background-color: white;
+    -fx-text-fill: white;
+}
+
+.table-view {
+    -fx-table-cell-border-color: #505050;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #3a3a3a;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #404040;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #2266aa;
+}
+
+.label {
+    -fx-text-fill: white;
+}
+
+.button {
+    -fx-background-color: #505050;
+    -fx-text-fill: white;
+}
+
+.text-field {
+    -fx-background-color: #505050;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #aaaaaa;
+}
+
+.combo-box {
+    -fx-background-color: #505050;
+    -fx-text-fill: white;
+}
